@@ -6,7 +6,16 @@ export class Snake {
         this.y = y;
         this.context = context;
         this.direction = direction;
-        this.tails = [];
+        this.tails = [
+            {
+                x: 40,
+                y: 60
+            },
+            {
+                x: 20,
+                y: 60
+            }
+        ];
     }
 
     draw(colorHead = "#f00", colorBody = "#f30") {
@@ -14,7 +23,7 @@ export class Snake {
         this.context.fillRect(this.x, this.y, GameField.size, GameField.size);
         this.context.fillStyle = colorBody;
         this.tails.forEach((tail) => {
-            context.fillRect(tail.x, tail.y, GameField.size, GameField.size);
+            this.context.fillRect(tail.x, tail.y, GameField.size, GameField.size);
         })
     }
 }
