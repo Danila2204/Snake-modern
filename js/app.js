@@ -13,13 +13,14 @@ class App {
     constructor(context) {
         this.context = context;
 
-        new GameLoop(this.update.bind(this), this.display.bind(this));
+        new GameLoop(this.update.bind(this), this.display.bind(this), 10);
     }
 
-    update(deltaTime) {
+    update() {        
+        snake.movement();
     }
 
-    display() {
+    display() {        
         this.context.clearRect(0, 0, GameField.width, GameField.height);
         snake.draw();
         berry.draw("https://png.pngtree.com/png-vector/20231214/ourmid/pngtree-pixel-style-fruit-watermelon-vector-png-image_11349948.png");
